@@ -4,6 +4,7 @@ import ngSanitize from 'angular-sanitize';
 import LocalStorageModule from 'angular-local-storage';
 
 export default angular.module('treeherder', [
+  'bcherny/ngimport',
   ngResource,
   ngSanitize,
   LocalStorageModule,

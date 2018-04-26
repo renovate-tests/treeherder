@@ -240,6 +240,8 @@ export const thJobNavSelectors = {
 
 export const thPinboardCountError = "Max pinboard size of 500 reached.";
 
+export const thPinboardMaxSize = 500;
+
 export const thPerformanceBranches = ["autoland", "mozilla-inbound"];
 
 /**
@@ -371,3 +373,5 @@ export const phAlertStatusMap = {
 };
 
 export const phCompareBaseLineDefaultTimeRange = 86400 * 2;
+
+export const thBugSuggestionLimit = 20;
