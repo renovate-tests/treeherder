@@ -1017,18 +1017,6 @@ class FailureLine(models.Model):
 
         return rv
 
-    def update_autoclassification(self):
-        """
-        If a job is manually classified and has a single line in the logs matching a single
-        FailureLine, but the FailureLine has not matched any ClassifiedFailure, add a
-        new match due to the manual classification.
-        """
-
-        manual_detector = Matcher.objects.get(name="ManualDetector")
-
-        classification, _ = self.set_classification(manual_detector)
-        self.mark_best_classification_verified(classification)
-
     def elastic_search_insert(self):
         if not settings.ELASTICSEARCH_URL:
             return
@@ -1452,18 +1440,6 @@ class TextLogError(models.Model):
             self.metadata.failure_line.best_is_verified = True
             self.metadata.failure_line.save()
             self.metadata.failure_line.elastic_search_insert()
-
-    def update_autoclassification(self):
-        """
-        If a job is manually classified and has a single line in the logs matching a single
-        TextLogError, but the TextLogError has not matched any ClassifiedFailure, add a
-        new match due to the manual classification.
-        """
-
-        manual_detector = Matcher.objects.get(name="ManualDetector")
-
-        classification, _ = self.set_classification(manual_detector)
-        self.mark_best_classification_verified(classification)
 
     def get_failure_line(self):
         """Get a related FailureLine instance if one exists."""
