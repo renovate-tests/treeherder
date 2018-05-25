@@ -9,9 +9,9 @@ import {
   getSlaveHealthUrl,
   getWorkerExplorerUrl,
   getJobSearchStrHref,
-} from '../../../helpers/urlHelper';
-import { toDateStr } from '../../../helpers/displayHelper';
-import { getSearchStr } from "../../../helpers/jobHelper";
+} from '../../../helpers/url';
+import { toDateStr } from '../../../helpers/display';
+import { getSearchStr } from "../../../helpers/job";
 
 export default class SummaryPanel extends React.Component {
   constructor(props) {

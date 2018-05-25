@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { linkifyRevisions, getBugUrl } from '../../../helpers/urlHelper';
+import { linkifyRevisions, getBugUrl } from '../../../helpers/url';
 import { with$injector } from '../../../context/InjectorContext';
 
 function ClassificationsPanel(props) {

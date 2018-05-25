@@ -11,8 +11,8 @@ import AutoclassifyTab from './AutoclassifyTab';
 import AnnotationsTab from './AnnotationsTab';
 import SimilarJobsTab from './SimilarJobsTab';
 import { thEvents } from '../../../js/constants';
-import { getStatus } from '../../../helpers/jobHelper';
-import { getAllUrlParams } from '../../../helpers/locationHelper';
+import { getStatus } from '../../../helpers/job';
+import { getAllUrlParams } from '../../../helpers/location';
 
 export default class TabsPanel extends React.Component {
   static getDerivedStateFromProps(nextProps) {
@@ -251,5 +251,6 @@ TabsPanel.defaultProps = {
   logParseStatus: 'pending',
   perfJobDetail: [],
   jobRevision: null,
-  fileBug: () => {}
+  // eslint-disable-next-line no-console
+  fileBug: () => { console.log("file a bug"); }
 };

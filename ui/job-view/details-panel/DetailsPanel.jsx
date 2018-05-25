@@ -8,7 +8,7 @@ import $ from 'jquery';
 import { InjectorContext } from '../../context/InjectorContext';
 import TabsPanel from './tabs-panel/TabsPanel';
 import treeherder from "../../js/treeherder";
-import { getLogViewerUrl, getReftestUrl } from "../../helpers/urlHelper";
+import { getLogViewerUrl, getReftestUrl } from "../../helpers/url";
 import SummaryPanel from './summary-panel/SummaryPanel';
 import PinBoard from './pinboard/PinBoard';
 import JobClassificationModel from '../../models/classification';
@@ -24,7 +24,6 @@ import TextLogStepModel from '../../models/textLogStep';
 import BugSuggestionsModel from '../../models/bugSuggestions';
 import JobLogUrlModel from '../../models/jobLogUrl';
 import BugJobMapModel from "../../models/bugJobMap";
-
 
 class DetailsPanel extends React.Component {
   constructor(props) {

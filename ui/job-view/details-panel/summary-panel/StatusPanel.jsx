@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { getStatus } from '../../../helpers/jobHelper';
+import { getStatus } from '../../../helpers/job';
 
 export default function StatusPanel(props) {
   const { selectedJob } = props;

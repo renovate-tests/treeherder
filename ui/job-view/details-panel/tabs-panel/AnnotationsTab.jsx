@@ -194,8 +194,8 @@ class AnnotationsTab extends React.Component {
   }
 
   deleteBug(bug) {
-    console.log("deleteBug", bug, this);
     const { selectedJob } = this.props;
+
     bug.destroy()
       .then(() => {
         this.thNotify.send(`Association to bug ${bug.bug_id} successfully deleted`, "success");

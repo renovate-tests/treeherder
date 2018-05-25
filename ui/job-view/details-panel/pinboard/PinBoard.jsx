@@ -5,14 +5,13 @@ import $ from 'jquery';
 import Mousetrap from "mousetrap";
 import { $rootScope } from 'ngimport/index.es2015';
 
-
-import { getBtnClass, getStatus } from '../../../helpers/jobHelper';
-import { getBugUrl } from '../../../helpers/urlHelper';
+import { getBtnClass, getStatus } from '../../../helpers/job';
+import { getBugUrl } from '../../../helpers/url';
 import { thEvents, thPinboardMaxSize } from "../../../js/constants";
 import { with$injector } from '../../../context/InjectorContext';
 import JobClassificationModel from '../../../models/classification';
 import BugJobMapModel from '../../../models/bugJobMap';
-import { formatModelError } from "../../../helpers/errorMessageHelper";
+import { formatModelError } from "../../../helpers/errorMessage";
 
 class PinBoard extends React.Component {
   constructor(props) {
@@ -128,7 +127,6 @@ class PinBoard extends React.Component {
     // classification can be left unset making this a no-op
     if (classification.failure_classification_id > 0) {
       job.failure_classification_id = classification.failure_classification_id;
-      console.log("ready to save classification");
       // update the unclassified failure count for the page
       this.ThResultSetStore.updateUnclassifiedFailureMap(job);
 
@@ -147,7 +145,6 @@ class PinBoard extends React.Component {
 
   saveBugs(job) {
     const { pinnedJobBugs } = this.props;
-    console.log("saveBugs", pinnedJobBugs);
 
     Object.values(pinnedJobBugs).forEach((bug) => {
       const bjm = new BugJobMapModel({
@@ -155,7 +152,7 @@ class PinBoard extends React.Component {
         job_id: job.id,
         type: 'annotation'
       });
-      console.log("saveBugs bug model", bjm);
+
       bjm.create()
         .then(() => {
           this.thNotify.send(`Bug association saved for ${job.platform} ${job.job_type_name}`, "success");

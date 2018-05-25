@@ -8,14 +8,14 @@ import { $rootScope } from 'ngimport/index.es2015';
 import thTaskcluster from '../../../js/services/taskcluster';
 import { thEvents } from '../../../js/constants';
 import { with$injector } from '../../../context/InjectorContext';
-import { isReftest } from '../../../helpers/jobHelper';
-import { getInspectTaskUrl, getReftestUrl } from '../../../helpers/urlHelper';
+import { isReftest } from '../../../helpers/job';
+import { getInspectTaskUrl, getReftestUrl } from '../../../helpers/url';
 import { withUser } from '../../../context/UserContext';
 import tcJobActionsTemplate from '../../../partials/main/tcjobactions.html';
 import LogUrls from './LogUrls';
 import JobDetailModel from '../../../models/jobDetail';
 import JobModel from '../../../models/job';
-import { formatModelError, formatTaskclusterError } from "../../../helpers/errorMessageHelper";
+import { formatModelError, formatTaskclusterError } from "../../../helpers/errorMessage";
 
 class ActionBar extends React.Component {
   constructor(props) {
